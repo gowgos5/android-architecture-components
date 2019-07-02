@@ -15,12 +15,14 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
 
     @NonNull
     @Override
+    // This method is called right when the adapter is created and is used to initialise your ViewHolder(s).
     public NoteHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = View.inflate(parent.getContext(), R.layout.note_item, null);
         return new NoteHolder(itemView);
     }
 
     @Override
+    // This method is called for each ViewHolder to bind it to the adapter. This is where we will pass our data to our ViewHolder.
     public void onBindViewHolder(@NonNull NoteHolder holder, int position) {
         Note currentNote = notes.get(position);
         holder.tvPriority.setText(String.valueOf(currentNote.getPriority()));
