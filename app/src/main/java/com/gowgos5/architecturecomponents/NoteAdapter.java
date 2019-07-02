@@ -42,6 +42,10 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
         notifyDataSetChanged();
     }
 
+    // The ViewHolder pattern is a pattern that a developer can use to increase the speed at which
+    // their ListView renders data. The reason for this improvement is that the number of times
+    // which the findViewById method is invoked is drastically reduced; existing views do not have
+    // to be garbage collected and new views do not have to be inflated.
     class NoteHolder extends RecyclerView.ViewHolder {
         private TextView tvTitle;
         private TextView tvDesc;
@@ -52,7 +56,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
             this.tvTitle = itemView.findViewById(R.id.tv_title);
             this.tvDesc = itemView.findViewById(R.id.tv_description);
             this.tvPriority = itemView.findViewById(R.id.tv_priority);
-
         }
     }
 }
